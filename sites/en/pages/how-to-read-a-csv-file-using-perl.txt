@@ -33,7 +33,7 @@ This is a CSV file. In each row there are fields separated with comma.
 Of course the separator can be any character as long as it is the same in the whole file.
 Most common separators are comma (CSV) and TAB (TSV) but people often use semi-colon or pipe | as well.
 
-Anyway, the task was to summarize the number in the 3rd column.
+Anyway, the task was to sum the numbers in the 3rd column.
 
 <h2>The algorithm</h2>
 
@@ -130,7 +130,7 @@ calling the constructor. In Perl there is no strict rule how to name the constru
 but nevertheless most people use the name "new". The way to call the constructor on the class is using
 the arrow <hl>-></hl>.
 
-This call creates an object setting the separator character to be comma (,).
+This call creates an object with a comma (,) as the separator character.
 An object is just a scalar value.
 
 Actually comma being the separator character is the default, but it seems it is clearer if I set it explicitly.
@@ -172,7 +172,7 @@ This example is based on a comment by H.Merijn Brand, the maintainer of the
 <include file="examples/read_multiline_csv.pl">
 
 This changes the whole way we handle the file. Instead of reading manually line-by-line,
-we ask the Text::CSV module to read, what it considers a line. This will let it handle
+we ask the Text::CSV module to read what it considers a line. This will let it handle
 fields with embedded newlines. We also turned on a couple of other flags in the module
 and when we opened the file we made sure it can handle UTF-8 characters correctly.
 
@@ -180,8 +180,8 @@ In addition, in this example the <hl>getline</hl> method returns a reference to 
 - something we have not learned at this point yet - so when fetching the 3rd element (index 2)
 we need to dereference it and use the arrow syntax to fetch the value: <hl>$fields->[2]</hl>.
 
-Lastly, after we finished the loop we still need to check if we reached the end-of-file (eof)?
-getline will return false both when it reached the end of file and if it encounters an error.
+Lastly, after we finished the loop we still need to check: did we reach the end-of-file (eof)?
+Getline will return false both when it reached the end of file and if it encounters an error.
 So we check if we reached the end of the file. If not, then we print the error message.
 
 <h2>Hofeherke</h2>

@@ -75,16 +75,16 @@ using the <hl>scalar</hl> function or by putting the array in
 <h2>Unix/Linux Shell programming</h2>
 
 In case you arrive from the world of <b>Unix/Linux Shell programming</b> you will recognize <hl>$0</hl>
-is being the name of the script there too. In shell however <hl>$1</hl>, <hl>$2</hl>, etc.
+as the name of the script there too. In shell however <hl>$1</hl>, <hl>$2</hl>, etc.
 hold the rest of the command line parameters. These variables are used by
-the regular expressions of Perl. The command line arguments are in <hl>@ARGV</hl>. Similar to <hl>$*</hl>
+the regular expressions of Perl. The command line arguments are in <hl>@ARGV</hl>, similar to <hl>$*</hl>
 in the Unix/Linux shell.
 
 <h2>How to extract the command line arguments from @ARGV</h2>
 
 <hl>@ARGV</hl> is just a regular <a href="/perl-arrays">array in Perl</a>.
 The only difference from arrays that you create, is that it does not
-need to be declared and it is populated by Perl when your script starts.
+need to be declared and iss populated by Perl when your script starts.
 
 Aside from these issue, you can handle it as a <a href="/perl-arrays">regular array</a>.
 You can go over the elements using <hl>foreach</hl>, or access them one by one using an index: <hl>$ARGV[0]</hl>.
@@ -177,7 +177,7 @@ $ perl a.pl "John Doe" 789
 Save 'John Doe' and '789'
 </code>
 
-You, as the programmer cannot do much about this.
+You, as the programmer, cannot do much about this.
 
 <h2>Checking the arguments</h2>
 
@@ -236,7 +236,7 @@ is copied to <hl>$filename</hl>. If there was no value, the script would <hl>die
 
 <h2>Minor bug</h2>
 
-There is one minor bug in the above code. If the user supplies 0 as the name of the file. It will still
+There is one minor bug in the above code. If the user supplies 0 as the name of the file, it will still
 be seen as False and the script will refuse to handle such a file. The question though: Does it matter?
 Can we live with the fact that our script might not handle a file called <b>0</b>... ?
 

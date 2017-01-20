@@ -20,7 +20,7 @@ How can we deal with this information?
 
 When the scripts starts to run, Perl will automatically create an array called <hl>@ARGV</hl> and put all the values
 on the command line separated by spaces in that variable. It won't include <hl>perl</hl> and it won't include the name of our script
-(<hl>program.pl</hl> in our case), that will be placed in the <hl>$0</hl> variable. <hl>@ARGV</hl> will only
+(<hl>program.pl</hl> in our case), which will be placed in the <hl>$0</hl> variable. <hl>@ARGV</hl> will only
 include the values located after the name of the script.
 
 In the above case <hl>@ARGV</hl> will contain:
@@ -104,7 +104,7 @@ The first line is a warning printed by <hl>GetOptions</hl>, the second line is t
 
 <h3>Option requires an argument</h3>
 
-Another case is when we run the script, pass <hl>--from</hl>, but without passing any value after it:
+Another case is when we run the script and pass <hl>--from</hl> without passing any value after it:
 
 <hl>perl cli.pl --from</hl>
 
@@ -137,8 +137,8 @@ variable. Running <hl>perl cli.pl</hl> will result in "Maven".
 
 <h2>Flags without value</h2>
 
-In addition to parameters that require a value, we also would like to allow flags. Names, that by their presence make a difference.
-These things are used when we want to allow the users to turn on debugging, or to set the verbosity of the script. 
+In addition to parameters that require a value, we also would like to allow flags. Names that by their presence make a difference.
+These are used when we want to allow the users to turn on debugging, or to set the verbosity of the script. 
 
 <code lang="perl">
 use strict;
@@ -175,7 +175,7 @@ The last example shows that values placed after such name are disregarded.
 
 <h2>Multiple flags</h2>
 
-Obviously, in most of the scripts you will need to handle more than one flag. In those cases we still call GetOptions <b>once</b> and provide it with
+Obviously, in most scripts you will need to handle more than one flag. In those cases we still call GetOptions <b>once</b> and provide it with
 all the parameters:
 
 Combining the above two cases together we can have a larger example:
@@ -328,8 +328,8 @@ if ($source_address) {
 <h2>Non-affiliated values</h2>
 
 The GetOptions function only handles the parameters that start with a dash and their corresponding values, when they are relevant.
-Once it processed the options it will remove them from <hl>@ARGV</hl>. (Both the option name and the option value will be removed.)
-Any other, non-affiliated values on he command line will
+Once it processes the options, it will remove them from <hl>@ARGV</hl>. (Both the option name and the option value will be removed.)
+Any other, non-affiliated values on the command line will
 stay in <hl>@ARGV</hl>. Hence if we add <a href="https://metacpan.org/pod/Data::Dumper">Data::Dumper</a> to our script and
 use that to print the content of <hl>@ARGV</hl> at the end (<hl>print Dumper \@ARGV</hl>) as in this script:
 
